@@ -1,0 +1,12 @@
+server:
+  port: 5001
+
+spring:
+  r2dbc:
+    url: r2dbc:mariadb://localhost:3306/techbank
+    username: aroussi
+    password: aroussi
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
