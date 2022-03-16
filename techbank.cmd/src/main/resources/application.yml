@@ -1,5 +1,5 @@
 server:
-  port: 5000
+  port: 4000
 
 spring:
   data:
@@ -12,4 +12,4 @@ spring:
       bootstrap-servers:
         - localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

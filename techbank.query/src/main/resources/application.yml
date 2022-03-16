@@ -1,11 +1,23 @@
 server:
-  port: 5001
+  port: 4001
 
 spring:
   r2dbc:
     url: r2dbc:mariadb://localhost:3306/techbank
     username: aroussi
     password: aroussi
+  kafka:
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
+    consumer:
+      bootstrap-servers:
+        - localhost:9092
+      group-id: techBankConsumer
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
 
 logging:
   level:
